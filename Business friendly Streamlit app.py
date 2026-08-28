@@ -81,7 +81,7 @@ def generate_sql_query(user_question):
         f"Convert this question into a SQL query. Return ONLY the raw SQL query without explanations or markdown formatting:\n{user_question}"
     )
     response = client.chat.completions.create(
-        model="nvidia/nemotron-3.5-lightning-30b-a3b",
+        model="deepseek-ai/deepseek-v4-flash-0731",
         messages=[{"role": "user", "content": prompt}],
     )
     sql = response.choices[0].message.content.strip()
