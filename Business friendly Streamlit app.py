@@ -81,7 +81,7 @@ def generate_sql_query(user_question):
         f"Convert this question into a SQL query. Return ONLY the raw SQL query without explanations or markdown formatting:\n{user_question}"
     )
     response = client.chat.completions.create(
-        model="meta/llama-3.1-8b-instruct",
+        model="meta/llama-3.3-70b-instruct",
         messages=[{"role": "user", "content": prompt}],
     )
     sql = response.choices[0].message.content.strip()
